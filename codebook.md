@@ -2,9 +2,8 @@
 
 This code book describes : 
 
-* The data
-* The variables 
-* All the transformations performed to clean up the data and get tidy data 
+* The data (data sources, dataset description, files)
+* The variables and all the transformations performed to clean up the data and get tidy data 
 
 ## The Data
 
@@ -14,9 +13,47 @@ This code book describes :
 *Original description of the dataset: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 ### Description
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
+
 ### Files
 
-## The variables
+* 'README.txt'
 
-## Transformation steps
+* 'features_info.txt': Shows information about the variables used on the feature vector.
+
+* 'features.txt': List of all features.
+
+* 'activity_labels.txt': Links the class labels with their activity name.
+
+* 'train/X_train.txt': Training set.
+
+* 'train/y_train.txt': Training labels.
+
+* 'test/X_test.txt': Test set.
+
+* 'test/y_test.txt': Test labels.
+
+* The following files are available for the train and test data. Their descriptions are equivalent.
+
+* 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+
+* 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis.
+
+* 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration.
+
+* 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
+
+## The variables and the transformation steps
+
+* **training** : table with training data.
+* **test** : table with test data.
+* **dt_raw** : a table in which training and test dataset are merged. They are raw data, and not cleaned.
+* **dtExtract** : a table in which only the measurements for the mean and the standard deviation are subsetted.
+* **dtDescrip** : a table in which dtExtract and activity_labels are merged in order to include the variable activity_ID.
+* **dtMelt**: a table in which the variables are melted in one column for each ID (subject) and activity.
+* **dtTidy** : a table in which the average is calculated for each ID and activity.
+
+
 
