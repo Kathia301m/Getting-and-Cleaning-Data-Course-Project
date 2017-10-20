@@ -8,7 +8,7 @@ The goal of this project is (1) to get raw data from the “Human Activity Recog
 4.	Appropriately labels the data set with descriptive activity names.
 5.	Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-## Prerequisites/Dependencies
+## Prerequisites
 
 Two packages were used:
 * `<data.table>` for question .1: getting the data set before merging training and test datasets. 
